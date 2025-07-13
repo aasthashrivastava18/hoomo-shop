@@ -2,7 +2,7 @@ import React from "react";
 import { useCart } from "../context/CartContext";
 
 export default function CartPage() {
-  const { cart, updateQuantity, removeFromCart } = useCart();
+  const { cart, updateQuantity, removeItem } = useCart();
   const cartArray = Array.isArray(cart.items) ? cart.items : [];
   const total = cartArray.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
@@ -42,7 +42,7 @@ export default function CartPage() {
                   </td>
                   <td className="py-2">₹{item.price * item.quantity}</td>
                   <td className="py-2">
-                    <button onClick={() => removeFromCart(item)} className="text-red-500 hover:underline">Remove</button>
+                    <button onClick={() => removeItem(item)} className="text-red-500 hover:underline">Remove</button>
                   </td>
                 </tr>
               ))}
