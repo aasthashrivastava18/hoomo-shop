@@ -31,11 +31,11 @@ export default function BannerSlider() {
         interval={3500}
         className="rounded-2xl shadow-lg"
       >
-        {images.map((img, idx) => (
+        {images?.map((img, idx) => (
           <div key={idx} className="relative w-full h-64 md:h-96">
             <img
-              src={img.src}
-              alt={img.alt}
+              src={img?.src}
+              alt={img?.alt}
               className="object-cover w-full h-64 md:h-96 rounded-2xl"
               draggable={false}
             />
