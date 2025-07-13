@@ -10,7 +10,7 @@ export default function AdminClothesPage() {
   const [uploading, setUploading] = useState(false);
 
   const fetchClothes = () => {
-    fetch("http://localhost:8080/api/clothes")
+    fetch("https://hoomo-shop.onrender.com/api/clothes")
       .then(res => res.json())
       .then(data => setClothes(data));
   };
@@ -29,7 +29,7 @@ export default function AdminClothesPage() {
     setUploading(true);
     const formData = new FormData();
     formData.append('image', file);
-    const res = await fetch('http://localhost:8080/api/upload/image', {
+    const res = await fetch('https://hoomo-shop.onrender.com/api/upload/image', {
       method: 'POST',
       body: formData,
     });
@@ -42,8 +42,8 @@ export default function AdminClothesPage() {
     e.preventDefault();
     const method = editingId ? "PUT" : "POST";
     const url = editingId
-      ? `http://localhost:8080/api/admin/clothes/${editingId}`
-      : "http://localhost:8080/api/admin/clothes";
+      ? `https://hoomo-shop.onrender.com/api/admin/clothes/${editingId}`
+      : "https://hoomo-shop.onrender.com/api/admin/clothes";
     const body = {
       ...form,
       sizes: form.sizes.split(",").map(s => s.trim()),
@@ -65,7 +65,7 @@ export default function AdminClothesPage() {
   };
 
   const handleDelete = async id => {
-    await fetch(`http://localhost:8080/api/admin/clothes/${id}`, {
+    await fetch(`https://hoomo-shop.onrender.com/api/admin/clothes/${id}`, {
       method: "DELETE",
       headers: { Authorization: `Bearer ${token}` },
     });

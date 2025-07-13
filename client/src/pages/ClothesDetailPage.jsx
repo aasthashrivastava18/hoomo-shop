@@ -6,7 +6,7 @@ export default function ClothesDetailPage() {
   const [item, setItem] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:8080/api/clothes/${id}`)
+    fetch(`https://hoomo-shop.onrender.com/api/clothes/${id}`)
       .then(res => res.json())
       .then(data => setItem(data));
   }, [id]);

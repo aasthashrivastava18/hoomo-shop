@@ -46,13 +46,13 @@ export default function ClothesHomePage() {
   const { tryItems, addTryItem, removeTryItem, MAX_TRY } = useTry();
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/clothes/categories")
+    fetch("https://hoomo-shop.onrender.com/api/clothes/categories")
       .then(res => res.json())
       .then(data => setCategories(data));
   }, []);
 
   useEffect(() => {
-    let url = "http://localhost:8080/api/clothes";
+    let url = "https://hoomo-shop.onrender.com/api/clothes";
     if (selectedCategory) url += `?category=${encodeURIComponent(selectedCategory)}`;
     fetch(url)
       .then(res => res.json())

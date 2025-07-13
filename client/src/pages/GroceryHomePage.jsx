@@ -25,7 +25,7 @@ export default function GroceryHomePage() {
   const { addItem } = useCart();
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/grocery/categories")
+    fetch("https://hoomo-shop.onrender.com/api/grocery/categories")
       .then(res => res.json())
       .then(data => {
         console.log('Fetched categories:', data);

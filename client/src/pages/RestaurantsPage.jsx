@@ -14,7 +14,7 @@ export default function RestaurantsPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/restaurants")
+    fetch("https://hoomo-shop.onrender.com/api/restaurants")
       .then(res => res.json())
       .then(data => {
         setRestaurants(data);

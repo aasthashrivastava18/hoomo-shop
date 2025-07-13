@@ -5,7 +5,7 @@ export default function AdminUsersPage() {
   const { token } = useAuth();
   const [users, setUsers] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:8080/api/admin/users", {
+    fetch("https://hoomo-shop.onrender.com/api/admin/users", {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then(res => res.json())

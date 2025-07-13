@@ -10,7 +10,7 @@ export default function RestaurantDetailPage() {
   const { cart, addItem, removeItem, updateQuantity } = useCart();
 
   useEffect(() => {
-    fetch(`http://localhost:8080/api/restaurants/${id}`)
+    fetch(`https://hoomo-shop.onrender.com/api/restaurants/${id}`)
       .then(res => res.json())
       .then(data => setRestaurant(data));
   }, [id]);

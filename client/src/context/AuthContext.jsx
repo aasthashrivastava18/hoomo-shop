@@ -18,7 +18,7 @@ export function AuthProvider({ children }) {
   }, []);
 
   const login = async (email, password) => {
-    const res = await fetch("http://localhost:8080/api/auth/login", {
+    const res = await fetch("https://hoomo-shop.onrender.com/api/auth/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
@@ -35,7 +35,7 @@ export function AuthProvider({ children }) {
   };
 
   const register = async (name, email, password) => {
-    const res = await fetch("http://localhost:8080/api/auth/register", {
+    const res = await fetch("https://hoomo-shop.onrender.com/api/auth/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, email, password }),

@@ -26,7 +26,7 @@ export default function Navbar() {
     }
     setLoading(true);
     const timeout = setTimeout(() => {
-      fetch(`http://localhost:8080/api/search?q=${encodeURIComponent(search)}`)
+      fetch(`https://hoomo-shop.onrender.com/api/search?q=${encodeURIComponent(search)}`)
         .then(res => res.json())
         .then(data => {
           const all = [];

@@ -15,7 +15,7 @@ export default function ProfilePage() {
     setUploading(true);
     const formData = new FormData();
     formData.append('image', file);
-    const res = await fetch('http://localhost:8080/api/upload/image', {
+    const res = await fetch('https://hoomo-shop.onrender.com/api/upload/image', {
       method: 'POST',
       body: formData,
     });
@@ -29,7 +29,7 @@ export default function ProfilePage() {
     setSaving(true);
     setSuccess(false);
     const token = localStorage.getItem('token');
-    const res = await fetch('http://localhost:8080/api/user/profile', {
+    const res = await fetch('https://hoomo-shop.onrender.com/api/user/profile', {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

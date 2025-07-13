@@ -9,7 +9,7 @@ export default function CategoryProductsPage() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:8080/api/grocery/products?category=${encodeURIComponent(categoryName)}`)
+    fetch(`https://hoomo-shop.onrender.com/api/grocery/products?category=${encodeURIComponent(categoryName)}`)
       .then(res => res.json())
       .then(data => setProducts(data));
   }, [categoryName]);

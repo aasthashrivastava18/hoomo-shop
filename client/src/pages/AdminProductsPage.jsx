@@ -10,7 +10,7 @@ export default function AdminProductsPage() {
   const [uploading, setUploading] = useState(false);
 
   const fetchProducts = () => {
-    fetch("http://localhost:8080/api/grocery/products")
+    fetch("https://hoomo-shop.onrender.com/api/grocery/products")
       .then(res => res.json())
       .then(data => setProducts(data));
   };
@@ -29,7 +29,7 @@ export default function AdminProductsPage() {
     setUploading(true);
     const formData = new FormData();
     formData.append('image', file);
-    const res = await fetch('http://localhost:8080/api/upload/image', {
+    const res = await fetch('https://hoomo-shop.onrender.com/api/upload/image', {
       method: 'POST',
       body: formData,
     });
@@ -42,8 +42,8 @@ export default function AdminProductsPage() {
     e.preventDefault();
     const method = editingId ? "PUT" : "POST";
     const url = editingId
-      ? `http://localhost:8080/api/admin/grocery/products/${editingId}`
-      : "http://localhost:8080/api/admin/grocery/products";
+      ? `https://hoomo-shop.onrender.com/api/admin/grocery/products/${editingId}`
+      : "https://hoomo-shop.onrender.com/api/admin/grocery/products";
     await fetch(url, {
       method,
       headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
@@ -60,7 +60,7 @@ export default function AdminProductsPage() {
   };
 
   const handleDelete = async id => {
-    await fetch(`http://localhost:8080/api/admin/grocery/products/${id}`, {
+    await fetch(`https://hoomo-shop.onrender.com/api/admin/grocery/products/${id}`, {
       method: "DELETE",
       headers: { Authorization: `Bearer ${token}` },
     });

@@ -8,7 +8,7 @@ export default function GroceryProductDetailPage() {
   const { addItem } = useCart();
 
   useEffect(() => {
-    fetch(`http://localhost:8080/api/grocery/products/${id}`)
+    fetch(`https://hoomo-shop.onrender.com/api/grocery/products/${id}`)
       .then(res => res.json())
       .then(data => setProduct(data));
   }, [id]);

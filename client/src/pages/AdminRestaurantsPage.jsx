@@ -10,7 +10,7 @@ export default function AdminRestaurantsPage() {
   const [uploading, setUploading] = useState(false);
 
   const fetchRestaurants = () => {
-    fetch("http://localhost:8080/api/restaurants")
+    fetch("https://hoomo-shop.onrender.com/api/restaurants")
       .then(res => res.json())
       .then(data => setRestaurants(data));
   };
@@ -26,8 +26,8 @@ export default function AdminRestaurantsPage() {
     e.preventDefault();
     const method = editingId ? "PUT" : "POST";
     const url = editingId
-      ? `http://localhost:8080/api/admin/restaurants/${editingId}`
-      : "http://localhost:8080/api/admin/restaurants";
+      ? `https://hoomo-shop.onrender.com/api/admin/restaurants/${editingId}`
+      : "https://hoomo-shop.onrender.com/api/admin/restaurants";
     await fetch(url, {
       method,
       headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
@@ -44,7 +44,7 @@ export default function AdminRestaurantsPage() {
   };
 
   const handleDelete = async id => {
-    await fetch(`http://localhost:8080/api/admin/restaurants/${id}`, {
+    await fetch(`https://hoomo-shop.onrender.com/api/admin/restaurants/${id}`, {
       method: "DELETE",
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -58,7 +58,7 @@ export default function AdminRestaurantsPage() {
     setUploading(true);
     const formData = new FormData();
     formData.append('image', file);
-    const res = await fetch('http://localhost:8080/api/upload/image', {
+    const res = await fetch('https://hoomo-shop.onrender.com/api/upload/image', {
       method: 'POST',
       body: formData,
     });
